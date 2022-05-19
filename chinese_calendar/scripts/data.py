@@ -75,15 +75,19 @@ class Arrangement(object):
         五、端午节：6月3日至5日放假，共3天。
         六、中秋节：9月10日至12日放假，共3天。
         七、国庆节：10月1日至7日放假调休，共7天。10月8日（星期六）、10月9日（星期日）上班。
+        in_lieu(2, 3).to(2, 4)
+        in_lieu(4, 4)
+        in_lieu(5, 3).to(5, 4)
+        in_lieu(10, 6).to(10, 7)
         """
         self.year_at(2022) \
             .nyd().rest(1, 1).to(1, 3) \
-            .sf().rest(1, 31).to(2, 6).work(1, 29).work(1, 30).in_lieu(2, 3).to(2, 4) \
-            .tsd().rest(4, 3).to(4, 5).work(4, 2).in_lieu(4, 4) \
-            .ld().rest(4, 30).to(5, 4).work(4, 24).work(5, 7).in_lieu(5, 3).to(5, 4) \
+            .sf().rest(1, 31).to(2, 6).work(1, 29).work(1, 30).in_lieu(1, 29).to(1, 30) \
+            .tsd().rest(4, 3).to(4, 5).work(4, 2).in_lieu(4, 2) \
+            .ld().rest(4, 30).to(5, 4).work(4, 24).work(5, 7).in_lieu(4, 24).in_lieu(5, 7) \
             .dbf().rest(6, 3).to(6, 5) \
             .maf().rest(9, 10).to(9, 12) \
-            .nd().rest(10, 1).to(10, 7).work(10, 8).work(10, 9).in_lieu(10, 6).to(10, 7)
+            .nd().rest(10, 1).to(10, 7).work(10, 8).work(10, 9).in_lieu(10, 8).to(10, 9)
 
     def _2021(self):
         """ http://www.gov.cn/zhengce/content/2020-11/25/content_5564127.htm
@@ -94,15 +98,19 @@ class Arrangement(object):
         五、端午节：6月12日至14日放假，共3天。
         六、中秋节：9月19日至21日放假调休，共3天。9月18日（星期六）上班。
         七、国庆节：10月1日至7日放假调休，共7天。9月26日（星期日）、10月9日（星期六）上班。
+        in_lieu(2, 16).to(2, 17)
+        in_lieu(5, 4).to(5, 5)
+        in_lieu(9, 20)
+        in_lieu(10, 6).to(10, 7)
         """
         self.year_at(2021) \
             .nyd().rest(1, 1).to(1, 3) \
-            .sf().rest(2, 11).to(2, 17).work(2, 7).work(2, 20).in_lieu(2, 16).to(2, 17) \
+            .sf().rest(2, 11).to(2, 17).work(2, 7).work(2, 20).in_lieu(2, 7).in_lieu(2, 20) \
             .tsd().rest(4, 3).to(4, 5) \
-            .ld().rest(5, 1).to(5, 5).work(4, 25).work(5, 8).in_lieu(5, 4).to(5, 5) \
+            .ld().rest(5, 1).to(5, 5).work(4, 25).work(5, 8).in_lieu(4, 25).in_lieu(5, 8) \
             .dbf().rest(6, 12).to(6, 14) \
-            .maf().rest(9, 19).to(9, 21).work(9, 18).in_lieu(9, 20) \
-            .nd().rest(10, 1).to(10, 7).work(9, 26).work(10, 9).in_lieu(10, 6).to(10, 7)
+            .maf().rest(9, 19).to(9, 21).work(9, 18).in_lieu(9, 18) \
+            .nd().rest(10, 1).to(10, 7).work(9, 26).work(10, 9).in_lieu(9, 26).in_lieu(10, 9)
 
     def _2020(self):
         """ http://www.gov.cn/zhengce/content/2019-11/21/content_5454164.htm
